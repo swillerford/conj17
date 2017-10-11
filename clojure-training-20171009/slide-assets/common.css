@@ -1,0 +1,92 @@
+/* common.css: these styles are always in effect */
+
+/* Hide org-mode tags in HTML document. */
+span.tag {
+   display: none;
+}
+
+pre.example {
+  /* Output from evaluated Clojure code is not automatically line-wrapped. */
+  word-wrap: break-word;
+  background-color: #ddd;
+  color: darkred;
+  margin-top: 40px;
+  padding: 5px 20px 5px 20px;
+}
+
+pre code {
+  display: block;
+  overflow: auto;
+}
+pre {
+  background-color: #eee;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 1px 1px #999;
+  box-shadow: 1px 1px 1px #999;
+  color: black;
+  font-family: Courier, monospace;
+  margin-bottom: 40px;
+  padding: 10px 20px;
+  line-height: initial;
+}
+
+code {
+  background-color: #eee;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  color: black;
+  font-family: Courier, monospace;
+  font-size: .9em;
+  padding: 2px 4px;
+}
+
+/* On-screen control panel for mouse controls. */
+#c-panel {
+   background-color: rgba(255,255,255,1);
+   bottom: 0px;
+   font-size: 12pt;
+   position: fixed;
+   right: 0px;
+   padding: 20px;
+   box-shadow: inset 1px 1px 1px #666;
+   border-radius: 5px;
+   border-image: initial;
+   font-size: 90%;
+}
+
+#c-panel a {
+   display: block;
+}
+
+#c-panel .key {
+   display: none;
+}
+
+#c-panel .key {
+   display: none;
+}
+
+/* org-mode code syntax highlighting */
+.org-constant {
+   color: purple;
+}
+
+.org-string {
+   color: green;
+}
+
+.org-comment {
+   color: darkred;
+}
+
+.org-comment-delimiter {
+   color: darkred;
+}
+
+.org-keyword, .org-builtin, .org-variable-name {
+   color: blue;
+}
+

@@ -1,0 +1,67 @@
+/* screen.css: these styles are only in effect for the normal (document) view */
+body {
+   font-family: Helvetica, Arial, sans-serif;
+   font-size: 1em;
+   font-weight: normal;
+   margin: 2em;
+}
+
+h1,h2,h3,h4,h5,h6,h7,h8 {
+   color: #3c4764;
+   font-family: 'ChunkFiveRegular', serif;
+   font-weight: normal;
+   font-style: normal;
+}
+
+h3 {
+   border-top: 5px solid #3c4764;
+   font-size: 3.4em;
+   margin-top: 1em;
+   padding-top: 15px;
+}
+
+h4 {
+   font-size: 1.5em;
+   margin: 1em 0 0 0;
+}
+
+h5 {
+   font-size: 1.2em;
+   margin: 1em 0 0 0;
+}
+
+p,ol,pre {
+   margin-left: 3em;
+}
+
+table {
+   margin: 2em;
+}
+
+h1 code,h2 code,h3 code,h4 code,h5 code,h6 code,h7 code,h8 code {
+   background-color: white;
+   font-weight: bold;
+   color: #3c4764;
+}
+
+#outline-container-1-1 {
+   display: none;
+}
+
+.folded,.unfolded {
+   background-color: #d3def7;
+   font-size: 0.8em;
+   padding: 0.3em;
+   margin-left: 3em;
+}
+
+@font-face {
+    font-family: 'ChunkFiveRegular';
+    src: url('fonts/Chunkfive-webfont.eot');
+    src: url('fonts/Chunkfive-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Chunkfive-webfont.woff') format('woff'),
+         url('fonts/Chunkfive-webfont.ttf') format('truetype'),
+         url('fonts/Chunkfive-webfont.svg#ChunkFiveRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

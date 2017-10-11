@@ -1,0 +1,198 @@
+/* projection.css: these styles are only in effect in the slide-show view */
+
+body {
+   margin: 18pt;
+   font-size: 24pt;
+}
+
+.topic1 {
+   font-size: 125%;
+   padding: 96pt 0 96pt 0;
+   background: url('clojure-logo.png') no-repeat bottom center;
+}
+
+.topic2 {
+   font-size: 125%;
+   padding: 96pt 0 96pt 0;
+}
+
+ul {
+  padding: 0;
+}
+li {
+   margin: 12pt;
+}
+
+/* Center embedded images. */
+p.image {
+   text-align: center;
+}
+
+body {
+  background-color: #d3def7;
+  color: #40404f;
+  font-family: "Museo500", serif;
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0;
+}
+#current-slide {
+  height: 100%;
+  width: 90%;
+  margin: 0 auto;
+}
+#current-slide > div {
+  height: 100%;
+  min-height: 100%;
+}
+
+/* TYPOGRAPHY */
+p {
+  line-height: 1.8em;
+  font-size: 24pt;
+}
+ul, li {
+  line-height: 1.6em;
+}
+ul {
+  margin-left: 20px;
+}
+li {
+  background-image: url("arrow-right.png");
+  background-repeat: no-repeat;
+  background-position: 0 10px;
+  font-size: 1.8em;
+  list-style: none;
+  padding-left: 30px;
+}
+li ul li {
+  font-size: 1em;
+}
+
+/* Use HTML heading as slide title regardless of level. */
+h1,h2,h3,h4,h5,h6,h7,h8 {
+   color: #3c4764;
+   font-family: 'ChunkFiveRegular', serif;
+   font-weight: normal;
+   font-style: normal;
+   margin: 50px;
+   font-size: 3.4em;
+   text-align: center;
+}
+
+h1 code,h2 code,h3 code,h4 code,h5 code,h6 code,h7 code,h8 code {
+   color: #3c4764;
+   font-weight: bold;
+   font-size: 105%;
+   background-color: #d3def7;
+}
+
+pre {
+  font-size: 22px;
+}
+
+/* TABLES */
+table {
+  font-size: 120%;
+  margin: 0 auto 0 auto;
+}
+th {
+  background-color: #5881d8;
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: left;
+  text-shadow: 1px 1px 1px #3c4764;
+}
+td {
+  border-bottom: 1px dotted #5881D8;
+  padding: 10px;
+  min-width: 200px;
+}
+
+/* ANCHORS */
+a, a:hover, a:visited {
+  color: #248e0f;
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
+}
+
+/*********************************************************************
+FONTS
+*********************************************************************/
+
+@font-face {
+    font-family: 'ChunkFiveRegular';
+    src: url('fonts/Chunkfive-webfont.eot');
+    src: url('fonts/Chunkfive-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Chunkfive-webfont.woff') format('woff'),
+         url('fonts/Chunkfive-webfont.ttf') format('truetype'),
+         url('fonts/Chunkfive-webfont.svg#ChunkFiveRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Museo300';
+    src: url('fonts/Museo300-Regular-webfont.eot');
+    src: url('fonts/Museo300-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Museo300-Regular-webfont.woff') format('woff'),
+         url('fonts/Museo300-Regular-webfont.ttf') format('truetype'),
+         url('fonts/Museo300-Regular-webfont.svg#Museo300') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Museo500';
+    src: url('fonts/Museo500-Regular-webfont.eot');
+    src: url('fonts/Museo500-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Museo500-Regular-webfont.woff') format('woff'),
+         url('fonts/Museo500-Regular-webfont.ttf') format('truetype'),
+         url('fonts/Museo500-Regular-webfont.svg#Museo500') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Museo700';
+    src: url('fonts/Museo700-Regular-webfont.eot');
+    src: url('fonts/Museo700-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Museo700-Regular-webfont.woff') format('woff'),
+         url('fonts/Museo700-Regular-webfont.ttf') format('truetype'),
+         url('fonts/Museo700-Regular-webfont.svg#Museo700') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* IE */
+
+<!--[if IE]>
+@font-face {
+  font-family: 'ChunkFiveRegular';
+  src: url('fonts/Chunkfive-webfont.eot');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Museo300';
+  src: url('fonts/Museo300-Regular-webfont.eot');
+  src: url('fonts/Museo300-Regular-webfont.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Museo500';
+  src: url('fonts/Museo500-Regular-webfont.eot');
+  src: url('fonts/Museo500-Regular-webfont.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Museo700';
+  src: url('fonts/Museo700-Regular-webfont.eot');
+  src: url('fonts/Museo700-Regular-webfont.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+<![endif]-->
