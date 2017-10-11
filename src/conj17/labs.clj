@@ -227,24 +227,98 @@
   (choose [_] (if last-winner last-winner (rand-nth choices)))
   (update-player [_ me you](->Mean (if (iwon? me you) me))))
 
-(defn game
-  [p1 p2 rounds]
-  (loop [p1 p1
-         p2 p2
-         p1-score 0
-         p2-score 0
-         rounds rounds]
-    (if (pos? rounds)
-      (let [p1-choice (choose p1)
-            p2-choice (choose p2)
-            result (winner p1-choice p2-choice)]
-        (recur
-          (update-player p1 p1-choice p2-choice)
-          (update-player p2 p2-choice p1-choice)
-          (+ p1-score (if (= result p1-choice) 1 0))
-          (+ p2-score (if (= result p2-choice) 1 0))
-          (dec rounds)))
-      {:p1 p1-score :p2 p2-score})))
+;; CONCURRENT SURGERY LAB
+(defn patient []
+  (atom {:arms 2
+         :legs 2
+         :heads 1}))
+
+(defn init-patients []
+  (vec (repeatedly 1000 patient)))
+
+(defn surgeon [specialty]
+  {:specialty specialty})
+
+(defn init-surgeons []
+  (vec (take 100 (map surgeon (cycle [:arms :legs :heads])))))
+
+(def all-patients nil)
+(def all-surgeons nil)
+
+(defn init! []
+  (alter-var-root #'all-patients (constantly (init-patients)))
+  (alter-var-root #'all-surgeons (constantly (init-surgeons))))
+
+(defn totals []
+  (reduce (partial merge-with +)
+          (map deref all-patients)))
+
+(defn transplant!
+  "a fn for transplanting body parts based on a surgeon's specialty"
+  [surgeon donor recipient]
+  (let [specialty (:specialty surgeon)
+        limbs (get @donor specialty)]
+    (when (pos? limbs)
+      (swap! donor update-in [specialty] dec)
+      (swap! recipient update-in [specialty] inc))))
+
+(defn select-patients []
+  (let [n1 (rand (count all-patients))
+        n2 (mod (inc n1) (count all-patients))]
+    [(nth all-patients n1) (nth all-patients n2)]))
+
+(defn operate! []
+  (let [surgn (rand-nth all-surgeons)
+        [p1 p2] (select-patients)]
+    (transplant! surgn p1 p2)))
+
+(defn run! []
+  (init!)
+  (dotimes [n 1000]
+    (operate!))
+  (totals))
+
+(defn operating-room []
+  (future (dotimes [_ 1000] operate!)))
+
+(defn run5! []
+  (init!)
+  (let [rooms (doall (repeatedly 5 operating-room))]
+    (dorun (map deref rooms))
+    (totals)))
+
+(defn auditor []
+  (future
+    (dotimes [_ 10]
+      (println (totals)))))
+
+(defn run-with-audit! []
+  (init!)
+  (println "Finding the variant:")
+  (let [audit (auditor)
+        rooms (doall (repeatedly 5 operating-room))]
+    (dorun (map deref rooms))
+    (deref audit)))
+
+;; TODO rest of operation exercises
+
+;; MACRO LAB
+
+;; What I want to type: some expressions
+;; What I want it to become: those expressions in sequence
+
+(defmacro just-do-it
+  "macro that just does what it takes in"
+  [& body]
+  `(do ~@body))
+
+(defmacro execute-x [expr]
+  `(do (clojure.pprint/pprint '~expr)
+  ~expr
+  (clojure.pprint/pprint ~expr)))
+
+
+
 
 
 
