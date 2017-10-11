@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fdf02ce9-5557-4cb0-9d4e-05f0caf78efc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/conj17/labs.clj" afterPath="$PROJECT_DIR$/src/conj17/labs.clj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/conj17/notes.clj" afterPath="$PROJECT_DIR$/src/conj17/notes.clj" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,22 +15,22 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="notes.clj" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="notes.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/conj17/notes.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="685">
-              <caret line="377" column="37" lean-forward="false" selection-start-line="377" selection-start-column="37" selection-end-line="377" selection-end-column="37" />
+            <state relative-caret-position="715">
+              <caret line="416" column="0" lean-forward="false" selection-start-line="416" selection-start-column="0" selection-end-line="416" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="labs.clj" pinned="false" current-in-tab="false">
+      <file leaf-file-name="labs.clj" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/conj17/labs.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="631">
-              <caret line="157" column="22" lean-forward="false" selection-start-line="157" selection-start-column="22" selection-end-line="157" selection-end-column="22" />
+            <state relative-caret-position="325">
+              <caret line="218" column="0" lean-forward="true" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -44,6 +45,12 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>d</find>
+      <find>doseq</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -55,10 +62,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/conj17/labs.clj" />
         <option value="$PROJECT_DIR$/src/conj17/notes.clj" />
+        <option value="$PROJECT_DIR$/src/conj17/labs.clj" />
       </list>
     </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="872" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -76,9 +88,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -101,18 +110,21 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="cursive.last.file.extension./Users/Sean/Sites/conj17/src" value="clj" />
-    <property name="settings.editor.selected.configurable" value="Keybindings" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/conj17" />
     </key>
   </component>
-  <component name="ReplState" timestamp="1507666141801">{:repl-history {:ide [], :local [], :remote []}}</component>
+  <component name="ReplState" timestamp="1507740602757">{:repl-history {:ide [], :local [{:command &quot;(reduce + (take 50 fibs))&quot;, :offset 25, :ns &quot;user&quot;} {:command &quot;fibs&quot;, :offset 4, :ns &quot;user&quot;} {:command &quot;(def fibs\n  (map first\n       (iterate (fn [[a b]] [b (+ a b)])\n                [0 1])))\n\n(reduce + (take 50 fibs))&quot;, :offset 115, :ns &quot;user&quot;} {:command &quot;(find-ns \&quot;labs\&quot;)&quot;, :offset 16, :ns &quot;user&quot;} {:command &quot;(find-ns labs)&quot;, :offset 14, :ns &quot;user&quot;} {:command &quot;(primes)&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;(println primes)&quot;, :offset 16, :ns &quot;user&quot;} {:command &quot;(take 3 primes)&quot;, :offset 15, :ns &quot;user&quot;} {:command &quot;(def primes\n  (letfn [(next-prime [known-primes n]\n            (lazy-seq\n              (if (some #(zero? (rem n %)) known-primes)\n                (next-prime known-primes (inc n))\n                (cons n (next-prime (conj known-primes n) (inc n))))))]\n    (next-prime [] 2)))&quot;, :offset 275, :ns &quot;user&quot;} {:command &quot;(&lt; 100 6)&quot;, :offset 9, :ns &quot;user&quot;} {:command &quot;(reduce + (take 50 (drop-while #(&lt; % 100))))&quot;, :offset 44, :ns &quot;user&quot;} {:command &quot;(reduce + (take 50 (drop-while #(&lt; % 100) primes)))&quot;, :offset 51, :ns &quot;user&quot;} {:command &quot;(char 1)&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;(char 2)&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;(char 3)&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;(char [1])&quot;, :offset 10, :ns &quot;user&quot;} {:command &quot;(char 30)&quot;, :offset 9, :ns &quot;user&quot;} {:command &quot;(char 70)&quot;, :offset 9, :ns &quot;user&quot;} {:command &quot;(char 65)&quot;, :offset 9, :ns &quot;user&quot;} {:command &quot;(range 65 (+ 65 26))&quot;, :offset 20, :ns &quot;user&quot;} {:command &quot;(chars (range 65 (+ 65 26)))&quot;, :offset 28, :ns &quot;user&quot;} {:command &quot;(map char (range 65 (+ 65 26)))&quot;, :offset 31, :ns &quot;user&quot;} {:command &quot;(def letters (map char (range 65 (+ 65 26))))&quot;, :offset 45, :ns &quot;user&quot;} {:command &quot;letters&quot;, :offset 7, :ns &quot;user&quot;} {:command &quot;(take 26 (drop 13 (cycle letters)))&quot;, :offset 35, :ns &quot;user&quot;} {:command &quot;(defn rotate [coll n]\n  (take (length coll) (drop n (cycle coll))))&quot;, :offset 67, :ns &quot;user&quot;} {:command &quot;(defn rotate [coll n]\n  (take (count coll) (drop n (cycle coll))))&quot;, :offset 66, :ns &quot;user&quot;} {:command &quot;(rotate letters 13)&quot;, :offset 19, :ns &quot;user&quot;} {:command &quot;(seq \\A \\N)&quot;, :offset 11, :ns &quot;user&quot;} {:command &quot;(list \\a \\n)&quot;, :offset 12, :ns &quot;user&quot;} {:command &quot;(vec \\a \\n)&quot;, :offset 11, :ns &quot;user&quot;} {:command &quot;(vector \\a \\n)&quot;, :offset 14, :ns &quot;user&quot;} {:command &quot;(map vector letters (rotate letters 13))&quot;, :offset 40, :ns &quot;user&quot;} {:command &quot;(def pairs (map vector letters (rotate letters 13)))&quot;, :offset 52, :ns &quot;user&quot;} {:command &quot;(map into {} pairs)&quot;, :offset 19, :ns &quot;user&quot;} {:command &quot;(into {} pairs)&quot;, :offset 15, :ns &quot;user&quot;} {:command &quot;(zipmap pairs)&quot;, :offset 14, :ns &quot;user&quot;} {:command &quot;(zipmap {} pairs)&quot;, :offset 17, :ns &quot;user&quot;} {:command &quot;(zipmap letters (rotate letters 13))&quot;, :offset 36, :ns &quot;user&quot;} {:command &quot;(def rot-13-cipher (zipmap letters (rotate letters 13)))&quot;, :offset 56, :ns &quot;user&quot;} {:command &quot;(\\A rot-13-cipher)&quot;, :offset 18, :ns &quot;user&quot;} {:command &quot;(rot-13-cipher \\A)&quot;, :offset 18, :ns &quot;user&quot;} {:command &quot;(rot-13-cipher \\a)&quot;, :offset 18, :ns &quot;user&quot;} {:command &quot;\n(defn rot13-one-char [letter]\n  (if (nil? (rot-13-cipher letter)) letter (rot-13-cipher letter)))&quot;, :offset 98, :ns &quot;user&quot;} {:command &quot;(rot13-one-char \\a)&quot;, :offset 19, :ns &quot;user&quot;} {:command &quot;(defn rot13-one-char [letter]\n  (rot13-one-char letter letter))&quot;, :offset 63, :ns &quot;user&quot;} {:command &quot;(defn rot13-one-char [letter]\n  (letters letter letter))&quot;, :offset 56, :ns &quot;user&quot;} {:command &quot;(rot13-one-char \\A)&quot;, :offset 19, :ns &quot;user&quot;} {:command &quot;(seq \&quot;hello\&quot;)&quot;, :offset 13, :ns &quot;user&quot;} {:command &quot;\n(defn encipher [s]\n  (rotate s 13))\n\n(defn encipher-string [string]\n  (apply str (encipher (seq string)))\n  )\n&quot;, :offset 111, :ns &quot;user&quot;} {:command &quot;(encipher-string \&quot;HELLO\&quot;)&quot;, :offset 25, :ns &quot;user&quot;} {:command &quot;(rot13-one-char \\L)&quot;, :offset 19, :ns &quot;user&quot;} {:command &quot;(defn encipher [s]\n  (apply str (rotate s 13)))&quot;, :offset 47, :ns &quot;user&quot;} {:command &quot;(encipher \&quot;HELLO\&quot;)&quot;, :offset 18, :ns &quot;user&quot;} {:command &quot;herro&quot;, :offset 5, :ns &quot;user&quot;} {:command &quot;(in-ns conj17.labs)&quot;, :offset 19, :ns &quot;user&quot;} {:command &quot;(hello-printer)&quot;, :offset 15, :ns &quot;user&quot;} {:command &quot;(ns)&quot;, :offset 4, :ns &quot;user&quot;} {:command &quot;(ns?)&quot;, :offset 5, :ns &quot;user&quot;} {:command &quot;(use conj17.labs)&quot;, :offset 17, :ns &quot;user&quot;}], :remote []}}</component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -228,30 +240,31 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="872" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="REPL" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29722223" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34583333" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13263889" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -262,9 +275,33 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/conj17/notes.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6240">
+          <caret line="416" column="0" lean-forward="true" selection-start-line="416" selection-start-column="0" selection-end-line="416" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/conj17/labs.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="631">
+        <state relative-caret-position="3060">
+          <caret line="204" column="0" lean-forward="true" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/conj17/notes.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/conj17/labs.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2355">
           <caret line="157" column="22" lean-forward="false" selection-start-line="157" selection-start-column="22" selection-end-line="157" selection-end-column="22" />
           <folding />
         </state>
@@ -272,8 +309,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/conj17/notes.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="685">
-          <caret line="377" column="37" lean-forward="false" selection-start-line="377" selection-start-column="37" selection-end-line="377" selection-end-column="37" />
+        <state relative-caret-position="715">
+          <caret line="416" column="0" lean-forward="false" selection-start-line="416" selection-start-column="0" selection-end-line="416" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/conj17/labs.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="218" column="0" lean-forward="true" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
           <folding />
         </state>
       </provider>

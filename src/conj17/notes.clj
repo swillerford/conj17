@@ -377,14 +377,42 @@ my-name ;; return the value
 
 ;; map is really handy for sequences!
 
+;; DON'T MIX SIDE EFFECTS AND LAZINESS
+
+;; Use side effects at the end, usually with doseq (sometimes reduce)
+;; Sometimes, doall or dorun to force eval of lazy seq
+
+;; Many seq ops have non-lazy equivalents that return vectors
+;; map = mapv
+;; filter = filterv
+;; concat = into []
+;; last = peek
+;; butlast = pop
+
+;; You can use seq functions on ANYthing that is a seq - strings, vectors, lists, maps, etc...
 
 
+;; TRANSDUCERS
+;; Transformations can be applied in many contexts other than just map and filter
+;; Transducers vs seqs
+;; Creating a transformation once & applying in multiple contexts improves code factoring, performance, etc.
+;; Transducers are eager not lazy
+;; Transducers allow you to collapse a series of transformation steps without going thru a bunch of intermediate steps.
+;; See the graphic here: https://medium.com/@roman01la/understanding-transducers-in-javascript-3500d3bd9624
+;; Process items one by one into a single output array
 
+;; Most seq fns have reduced arity form to create a transducer
+(map inc) ;; notice no seq here - this is a transducer
 
+;; Combine transducers with comp - composition creates modified recipe
+;; transducer example:
+(comp (filter odd?) (map inc) (partition-all 2))
+;; INPUT -> filter out even numbers -> increment by one -> partition -> OUTPUT
 
-
-
-
+;; transduce fn is like reduce, but with a transducer. Applies to an input coll and accumulates an output
+;; into collects results of applying transducer to coll
+;; sequence can apply a transducer
+;; eduction creates a new transducer every time - no caching
 
 
 

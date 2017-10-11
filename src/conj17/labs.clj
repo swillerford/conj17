@@ -158,21 +158,93 @@
   (println "Prereqs:" (if (:prereqs course) (clojure.string/join ", " (:prereqs course)) "none"))))
 
 
+;; Sums and Ciphers lab
+(def fibs
+  (map first
+       (iterate (fn [[a b]] [b (+ a b)])
+                [0 1])))
+
+(reduce + (take 50 fibs))
+
+(def primes
+  (letfn [(next-prime [known-primes n]
+            (lazy-seq
+              (if (some #(zero? (rem n %)) known-primes)
+                (next-prime known-primes (inc n))
+                (cons n (next-prime (conj known-primes n) (inc n))))))]
+    (next-prime [] 2)))
+
+;;(reduce + (take 50 (drop-while #(<= % 100))))
+
+(defn rotate [coll n]
+  (take (count coll) (drop n (cycle coll))))
+
+(def letters (map char (range 65 (+ 65 26))))
+
+(defn rot13-one-char [letter]
+  (letters letter letter))
 
 
+(defn encipher [s]
+  (apply str (rotate s 13)))
 
+;;; RoShamBo
+(def dominates
+  {:rock :paper
+   :paper :scissors
+   :scissors :rock})
 
+(def choices (vec (keys dominates)))
 
+(defn winner [c1 c2]
+  (cond
+    (= c1 c2) nil
+    (= c1 (dominates c2)) c1
+    :else c2))
 
+(defn draw? [c1 c2]
+  (nil? (winner c1 c2)))
 
+(defn iwon? [c1 c2]
+  (= c1 (winner c1 c2)))
 
+(defprotocol Player
+  (choose [p])
+  (update-player [p me you]))
 
+(defrecord Random []
+  Player
+  (choose [_] (rand-nth choices))
+  (update-player [this me you] this))
 
+(defrecord Stubborn [c]
+  Player
+  (choose [_] c)
+  (update-player [this me you] this))
 
+(defrecord Mean [last-winner]
+  Player
+  (choose [_] (if last-winner last-winner (rand-nth choices)))
+  (update-player [_ me you](->Mean (if (iwon? me you) me))))
 
-
-
-
+(defn game
+  [p1 p2 rounds]
+  (loop [p1 p1
+         p2 p2
+         p1-score 0
+         p2-score 0
+         rounds rounds]
+    (if (pos? rounds)
+      (let [p1-choice (choose p1)
+            p2-choice (choose p2)
+            result (winner p1-choice p2-choice)]
+        (recur
+          (update-player p1 p1-choice p2-choice)
+          (update-player p2 p2-choice p1-choice)
+          (+ p1-score (if (= result p1-choice) 1 0))
+          (+ p2-score (if (= result p2-choice) 1 0))
+          (dec rounds)))
+      {:p1 p1-score :p2 p2-score})))
 
 
 
